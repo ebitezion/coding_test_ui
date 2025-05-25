@@ -40,10 +40,10 @@ export const Item: React.FC<ItemProps> = ({
     setCurrentImageIndex(index);
   };
 
-  const toggleFavorite = async (e: React.MouseEvent) => {
+  const toggleFavorite = async (e: React.MouseEvent) => {https://codingtest.cohi.xyz/api/trpc/restaurant.addFa
     e.stopPropagation();
     try {
-      const response = await fetch("https://codingtest.cohi.xyz/api/trpc/restaurant.addFavorite", {
+      const response = await fetch("http://localhost:3000/api/trpc/restaurant.addFavorite", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
