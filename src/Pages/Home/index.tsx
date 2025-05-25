@@ -73,7 +73,7 @@ function mapNewItemToOld(newItem: NewItemInterface): OldItemInterface {
   return (
     <section className="Home">
       {state.error ? (
-        <h2>Oops, seems like there was an error. Try later</h2>
+        <h2>Ooops, seems like there was an error. Try again later</h2>
       ) : (
         renderContent()
       )}
