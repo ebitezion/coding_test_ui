@@ -43,7 +43,7 @@ export const Item: React.FC<ItemProps> = ({
   const toggleFavorite = async (e: React.MouseEvent) => {
     e.stopPropagation();
     try {
-      const response = await fetch("http://localhost:3000/api/trpc/restaurant.addFavorite", {
+      const response = await fetch("https://codingtest.cohi.xyz/api/trpc/restaurant.addFavorite", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

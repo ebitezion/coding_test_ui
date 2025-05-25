@@ -19,7 +19,7 @@ function App(): JSX.Element {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const res = await fetch('http://localhost:3000/api/trpc/restaurant.getRestaurants');
+          const res = await fetch('https://codingtest.cohi.xyz/api/trpc/restaurant.getRestaurants');
           const json = await res.json();
           const data = json.result?.data || [];
           dispatch({ type: 'ADD_INITIAL_ITEMS', payload: data });
