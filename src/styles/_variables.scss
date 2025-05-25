@@ -1,0 +1,43 @@
+// Colors
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$contrast-color: #e74c3c; // Used in ButtonCTA, Button-small notification
+$border-color: #ccc;      // Used in Search-input
+$background-color: #f9f9f9;
+$text-color: #333;
+$light-text-color: #fff;
+$dark-text-color: #000;
+
+// Font sizes
+$font-size-base: 1.6rem;
+$font-size-small: 1.2rem;
+$font-size-medium: 1.3rem; // Used in Search-input input
+$font-size-large: 1.8rem;
+
+// Spacing
+$padding-xs: 3px;
+$padding-sm: 5px;
+$padding-md: 6px;
+$padding-lg: 10px;
+$padding-xl: 12px;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 9px; // Used in Search-input
+$border-radius-circle: 50%;
+
+// Button Mixin
+@mixin buttonPrimary {
+  background-color: $primary-color;
+  color: $light-text-color;
+  border: none;
+  border-radius: $border-radius-sm;
+  padding: $padding-sm $padding-lg;
+  cursor: pointer;
+  font-size: $font-size-small;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}

@@ -1,0 +1,137 @@
+@use "@styles/variables" as vars;
+
+.Header {
+  position: relative;
+  width: 100%;
+  padding-block: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    @include vars.buttonPrimary;
+  }
+
+  &__buttons-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__desktop {
+    display: none;
+  }
+
+  &__title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+  }
+
+  &--searching {
+    justify-content: center; /* Center SearchInput in mobile */
+    padding: 10px; /* Adjust padding for consistency */
+  }
+
+  &__search-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid vars.$border-color;
+    border-radius: 9px;
+    padding: 6px;
+    width: 100%;
+    max-width: 300px; /* Limit width for mobile */
+    background: white;
+
+    label {
+      display: grid;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+
+    input {
+      width: 100%; /* Full width within container */
+      border: none;
+      outline: none;
+      font-size: 1.1rem;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    &__buttons-container {
+      display: none;
+    }
+
+    &__desktop {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center search bar and cart */
+      width: 100%;
+    }
+
+    &__search-field {
+      display: flex;
+      align-items: center;
+      border: 1px solid vars.$border-color;
+      border-radius: 9px;
+      padding: 6px;
+      margin: 0 15px; /* Symmetrical margin */
+      flex-grow: 0; /* Prevent stretching */
+      width: auto; /* Content-driven width */
+
+      label {
+        display: grid;
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+      }
+
+      input {
+        width: 200px;
+        border: none;
+        outline: none;
+        font-size: 1.1rem;
+      }
+    }
+
+    &__cart {
+      position: relative;
+      background-color: vars.$contrast-color;
+      border: none;
+      display: flex;
+      align-items: center;
+      padding: 6px;
+      border-radius: 9px;
+      color: white;
+      letter-spacing: 0.5px;
+      font-size: 1.2rem;
+
+      span {
+        margin-right: 5px;
+      }
+
+      &--notification {
+        position: absolute;
+        top: -7px;
+        right: -7px;
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: red;
+      }
+    }
+
+    &__desktop--filter {
+      display: none; /* Keep filter hidden */
+    }
+  }
+}

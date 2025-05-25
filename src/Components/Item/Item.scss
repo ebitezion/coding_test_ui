@@ -1,0 +1,135 @@
+
+.Item {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.Item__thumbnail {
+  width: 100%;
+  height: 250px;
+  background-color: #f9f9f9;
+  border-radius: 9px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.Item__thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Item__nav-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.Item__nav-button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.Item__nav-button:hover {
+  opacity: 1;
+}
+
+.Item__nav-button--active {
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 1;
+}
+
+.Item__nav-button:only-child {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.Item__favorite-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.7;
+  color: #fff;
+  transition: background-color 0.3s, opacity 0.3s, color 0.3s;
+}
+
+.Item__favorite-button:hover {
+  opacity: 1;
+}
+
+.Item__favorite-button--active {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #ff4d4f;
+}
+
+.Item__favorite-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.Item__body {
+  padding: 10px 0;
+}
+
+.Item__featured {
+  font-size: 0.9rem;
+  color: #f97316; /* Orange */
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.Item__name-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.Item__name-rating h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: right;
+}
+
+.Item__description {
+  font-size: 1rem;
+  color: #333; /* Dark font */
+  margin: 8px 0;
+}
+
+.Item__meta {
+  font-size: 0.9rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.Item__separator {
+  font-size: 0.8rem;
+}

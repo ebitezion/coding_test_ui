@@ -1,0 +1,81 @@
+.Detail {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  // Thumbnail Section
+  &__thumbnail {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+
+    img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+  }
+
+  // Info Section
+  &__info {
+    // Header: Title + Button
+    &--header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 0.6rem;
+      margin-bottom: 0.5rem;
+
+      h2 {
+        font-weight: 500;
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    // Price & Rating
+    &--meta {
+      margin-bottom: 1rem;
+
+      span {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #2a2a2a;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    // Description
+    &--description {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #444;
+    }
+  }
+
+  // Responsive: Tablet and up
+  @media screen and (min-width: 700px) {
+    flex-direction: row;
+    max-height: 80vh;
+
+    & > article {
+      width: 50%;
+      height: 100%;
+      padding: 1rem;
+    }
+
+    &__thumbnail {
+      border-right: 1px solid $border-color;
+
+      img {
+        max-height: 75vh;
+      }
+    }
+  }
+}
