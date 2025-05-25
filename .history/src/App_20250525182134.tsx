@@ -13,6 +13,24 @@ import { StateInterface } from './globalTypes';
 
 import './App.scss';
 
+function mapNewItemToOld(newItem: NewItemInterface): OldItemInterface {
+  console.log("Mapping item:", newItem);
+  return {
+    id: newItem.id,
+    title: newItem.name,
+    description: newItem.desc,
+    image: newItem.images || [],
+    price: parseFloat(newItem.priceRange.replace(/[^0-9.]/g, '')) || 0,
+    rating: {
+      rate: newItem.rating,
+      count: newItem.ratingCount,
+    },
+    category: newItem.category as STORE_CATEGORY,
+    isFavorite: newItem.isFavorite,
+    quantity: newItem.quantity,
+    added: newItem.added,
+  };
+}
 function App(): JSX.Element {
   const [state, dispatch] = useReducer(reducer, initialState());
 

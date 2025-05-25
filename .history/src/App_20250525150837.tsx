@@ -13,13 +13,31 @@ import { StateInterface } from './globalTypes';
 
 import './App.scss';
 
+function mapNewItemToOld(newItem: NewItemInterface): OldItemInterface {
+  console.log("Mapping item:", newItem);
+  return {
+    id: newItem.id,
+    title: newItem.name,
+    description: newItem.desc,
+    image: newItem.images || [],
+    price: parseFloat(newItem.priceRange.replace(/[^0-9.]/g, '')) || 0,
+    rating: {
+      rate: newItem.rating,
+      count: newItem.ratingCount,
+    },
+    category: newItem.category as STORE_CATEGORY,
+    isFavorite: newItem.isFavorite,
+    quantity: newItem.quantity,
+    added: newItem.added,
+  };
+}
 function App(): JSX.Element {
   const [state, dispatch] = useReducer(reducer, initialState());
 
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const res = await fetch('https://codingtest.cohi.xyz/api/trpc/restaurant.getRestaurants');
+          const res = await fetch('http://localhost:3000/api/trpc/restaurant.getRestaurants');
           const json = await res.json();
           const data = json.result?.data || [];
           dispatch({ type: 'ADD_INITIAL_ITEMS', payload: data });
